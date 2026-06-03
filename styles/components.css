@@ -701,6 +701,16 @@
     color: var(--text-secondary);
 }
 
+@media (max-width: 768px) {
+    #nosotros .about-image-wrapper {
+        order: 2;
+        margin-top: 20px;
+    }
+    #nosotros .about-content {
+        order: 1;
+    }
+}
+
 /* 4. Menu Section (La Carta) */
 .menu-tabs {
     display: inline-flex;
