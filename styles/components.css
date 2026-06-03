@@ -440,7 +440,7 @@
 
 .marquee-track {
     display: inline-flex;
-    animation: scroll-marquee 60s linear infinite;
+    animation: scroll-marquee 85s linear infinite;
 }
 
 .marquee-track:hover {

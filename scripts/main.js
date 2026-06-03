@@ -67,7 +67,8 @@ const dishes = [
         title: "Zamburiñas plancha con refrito",
         price: "16,90 €",
         desc: "",
-        allergens: [2, 14]
+        allergens: [2, 14],
+        image: "assets/zamburinas.jpg"
     },
     {
         id: 7,
@@ -93,7 +94,8 @@ const dishes = [
         title: "Croquetas de jamón",
         price: "9,90 €",
         desc: "",
-        allergens: [1]
+        allergens: [1],
+        image: "assets/croquetas.jpg"
     },
     {
         id: 4,
@@ -119,7 +121,8 @@ const dishes = [
         title: "Cecina de León con virutas de Foie",
         price: "16,50 €",
         desc: "",
-        allergens: []
+        allergens: [],
+        image: "assets/cecina-foie.jpg"
     },
     {
         id: 12,
@@ -128,7 +131,7 @@ const dishes = [
         price: "17,90 €",
         desc: "",
         allergens: [8],
-        image: "assets/tabla-embutidos.jpg"
+        image: "assets/tabla-ibericos.jpg"
     },
     {
         id: 13,
@@ -163,7 +166,8 @@ const dishes = [
         title: "Revuelto setas, langostinos, jamón",
         price: "13,90 €",
         desc: "",
-        allergens: [2, 3, 4]
+        allergens: [2, 3, 4],
+        image: "assets/revuelto-setas-langostinos.jpg"
     },
     {
         id: 16,
@@ -258,7 +262,8 @@ const dishes = [
         price: "S/M",
         desc: "con salsa kimchi y alioli suave",
         allergens: [1, 2, 3, 14],
-        badge: "Sugerencia"
+        badge: "Sugerencia",
+        image: "assets/crujiente-chipirones.png"
     },
     {
         id: 49,
@@ -305,7 +310,8 @@ const dishes = [
         price: "S/M",
         desc: "",
         allergens: [],
-        badge: "Sugerencia"
+        badge: "Sugerencia",
+        image: "assets/setas-salsa-foie.jpg"
     },
     {
         id: 60,
@@ -405,7 +411,8 @@ const dishes = [
         price: "23,90 €",
         desc: "",
         allergens: [2, 3, 7],
-        badge: "Recomendado"
+        badge: "Recomendado",
+        image: "assets/bacalao-pulpo.jpg"
     },
     {
         id: 32,
