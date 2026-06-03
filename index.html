@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.onerror = function(msg, url, line, col, error) {
+            var errDiv = document.getElementById('debug-error-box');
+            if (!errDiv) {
+                errDiv = document.createElement('div');
+                errDiv.id = 'debug-error-box';
+                errDiv.style.position = 'fixed';
+                errDiv.style.top = '0';
+                errDiv.style.left = '0';
+                errDiv.style.width = '100%';
+                errDiv.style.background = '#ff3333';
+                errDiv.style.color = '#ffffff';
+                errDiv.style.padding = '20px';
+                errDiv.style.zIndex = '999999';
+                errDiv.style.fontSize = '14px';
+                errDiv.style.fontFamily = 'monospace';
+                errDiv.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
+                errDiv.style.wordBreak = 'break-all';
+                document.documentElement.appendChild(errDiv);
+            }
+            errDiv.innerHTML = '<strong>Error de JS detectado en móvil:</strong><br>' + 
+                               'Mensaje: ' + msg + '<br>' +
+                               'Archivo: ' + url.substring(url.lastIndexOf('/') + 1) + '<br>' +
+                               'Línea: ' + line + ', Columna: ' + col;
+            return false;
+        };
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Original Tavern | Restaurante en Solares, Cantabria — Cachopo, Pulpo y Carnes</title>
+    <meta name="description" content="The Original Tavern, restaurante en Solares (Cantabria). Cocina tradicional cántabra con raciones generosas: cachopo de cecina y foie, pulpo a la brasa, carnes y mariscos. Cerca de Liérganes, Santander y Medio Cudeyo. Reservas: 942 52 14 72.">
+    <meta name="keywords" content="restaurante Solares, restaurante Cantabria, donde comer Solares, restaurante Liérganes, donde comer Cantabria, restaurante cerca Santander, cachopo Cantabria, pulpo brasa Solares, restaurante Medio Cudeyo, bar restaurante Solares, comer en Cantabria, restaurante familiar Cantabria, carnes Cantabria, mariscos Cantabria, comida tradicional cántabra, reservar mesa Solares, The Original Tavern">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Original Tavern">
+    <meta name="geo.region" content="ES-CB">
+    <meta name="geo.placename" content="Solares, Cantabria, España">
+    <link rel="canonical" href="https://theoriginaltavern.es/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="The Original Tavern | Restaurante en Solares, Cantabria">
+    <meta property="og:description" content="Cocina tradicional cántabra con raciones generosas: cachopo de cecina y foie, pulpo a la brasa, carnes y mariscos. Cerca de Liérganes y Santander. ¡Reserva tu mesa!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200">
+    <meta property="og:url" content="https://theoriginaltavern.es/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="The Original Tavern">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Original Tavern | Restaurante en Solares, Cantabria">
+    <meta name="twitter:description" content="Cachopo, pulpo, carnes y mariscos en Solares (Cantabria). Raciones generosas, 4.7⭐ en Google. Reservas: 942 52 14 72.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200">
+
+    <!-- JSON-LD Structured Data (Rich Results: estrellas, horario y teléfono en Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Original Tavern",
+      "description": "Restaurante de cocina tradicional cántabra en Solares. Especialistas en cachopo de cecina y foie, pulpo a la brasa, carnes y mariscos. Raciones generosas en un ambiente acogedor de dos plantas.",
+      "url": "https://theoriginaltavern.es/",
+      "telephone": ["+34942521472", "+34627088028"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Fernández Rañada",
+        "addressLocality": "Solares",
+        "addressRegion": "Cantabria",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3958,
+        "longitude": -3.7095
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "481",
+        "bestRating": "5"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "13:00",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "20:00",
+          "closes": "23:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "13:00",
+          "closes": "16:30"
+        }
+      ],
+      "servesCuisine": ["Española", "Cántabra", "Tradicional"],
+      "priceRange": "€€",
+      "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1200",
+      "sameAs": [
+        "https://www.facebook.com/TheOriginalTavernSolares/",
+        "https://www.instagram.com/theoriginaltavern/",
+        "https://maps.app.goo.gl/djLpsPLtSeErw6v27"
+      ],
+      "hasMap": "https://maps.app.goo.gl/djLpsPLtSeErw6v27",
+      "menu": "https://theoriginaltavern.es/#carta",
+      "acceptsReservations": true,
+      "nearbyLocations": ["Liérganes", "Santander", "Medio Cudeyo", "Hoznayo", "Valdecilla"]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css?v=1.0.3">
+    <link rel="stylesheet" href="styles/components.css?v=1.0.3">
+    <link rel="stylesheet" href="styles/animations.css?v=1.0.3">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="#inicio" class="logo" aria-label="The Original Tavern Inicio">
+                <img src="assets/logo-light.png" alt="The Original Tavern" class="logo-img logo-img-light">
+                <img src="assets/logo-dark.png" alt="The Original Tavern" class="logo-img logo-img-dark">
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#carta" class="nav-link">La Carta</a></li>
+                    <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary btn-book" id="open-booking-btn">
+                    <span>Llamar para Reservar</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container reveal">
+            <div class="hero-badge">
+                <svg class="icon star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span>4.7 de Valoración en Google (481 reseñas)</span>
+            </div>
+            <h1>Cocina tradicional con un toque <span class="text-gradient">original</span></h1>
+            <p class="hero-subtitle">Disfruta de raciones generosas, carnes de primera, pulpo braseado y el mejor ambiente en pleno corazón de Solares, Cantabria.</p>
+            <div class="hero-buttons">
+                <a href="#carta" class="btn btn-primary btn-large">Ver la Carta</a>
+                <button class="btn btn-secondary btn-large" id="open-booking-btn-hero">Llamar para Reservar</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section section-padding" id="nosotros">
+        <div class="container grid grid-2">
+            <div class="about-image-wrapper reveal reveal-left">
+                <div class="about-image-card">
+                    <img src="assets/dining-room-new.png" alt="Comedor superior acogedor de The Original Tavern" class="about-img">
+                    <div class="experience-badge">
+                        <span class="number">2</span>
+                        <span class="text">Plantas con<br>comedor y bar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content reveal reveal-right">
+                <span class="section-tagline">Bienvenidos a The Original Tavern</span>
+                <h2>Dos ambientes únicos creados para disfrutar</h2>
+                <p class="about-text">
+                    Ubicados en el centro de Solares, Cantabria, ofrecemos un espacio gastronómico donde la tradición y la comodidad se encuentran. En nuestra planta baja disfrutarás de un ambiente dinámico de bar de picoteo y vermuts, ideal para compartir unas buenas rabas de calamar o unas croquetas cremosas con amigos.
+                </p>
+                <p class="about-text text-secondary">
+                    En nuestra planta superior disponemos de un amplio y acogedor comedor de piedra iluminada con luces cálidas y cian, perfecto para comidas familiares o cenas tranquilas en pareja, donde degustar nuestro famoso y gigante cachopo de cecina y foie o un entrecot de primera calidad en su punto exacto.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Cocina Honesta</h4>
+                            <p>Ingredientes frescos de Cantabria y porciones muy abundantes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Trato Familiar</h4>
+                            <p>Un equipo dedicado a hacerte sentir como en tu propia casa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section (La Carta) -->
+    <section class="menu-section section-padding" id="carta">
+        <div class="container text-center reveal">
+            <span class="section-tagline">Nuestra Carta</span>
+            <h2>Sabores auténticos que conquistan</h2>
+            <p class="section-subtitle">Explora nuestra carta oficial dividida por secciones. Raciones abundantes elaboradas con materias primas de primera calidad.</p>
+            
+            <!-- Category Tabs (Official Sections) -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="sugerencias">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    Sugerencias
+                </button>
+                <button class="tab-btn" data-category="picoteo-compartir">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm10-7H18v9c0 1.1-.9 2-2 2v1h5v-1c0-1.1-.9-2-2-2V2h2z"/></svg>
+                    Picoteo para compartir
+                </button>
+                <button class="tab-btn" data-category="ensaladas">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-9c.83 0 1.5-.67 1.5-1.5S10.33 6 9.5 6 8 6.67 8 7.5 8.67 9 9.5 9z"/></svg>
+                    Ensaladas
+                </button>
+                <button class="tab-btn" data-category="mojar-pan">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M19 12c.04 4.82-3.33 8.95-8.1 9.7A10.02 10.02 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10zm-8.5-4c0-.83-.67-1.5-1.5-1.5S7.5 7.17 7.5 8s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm6.5 4c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-6.5 4c0-1.38-1.12-2.5-2.5-2.5S5.5 14.62 5.5 16s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5z"/></svg>
+                    Para mojar pan
+                </button>
+                <button class="tab-btn" data-category="pescados-mariscos">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12s4.48-10 10-10zm-8 10c0 3.74 2.59 6.87 6 7.74v-1.8c-2.39-.75-4.22-2.58-4.97-4.97H4v-.97zm8 7.74c3.41-.87 6-4 6-7.74H14v1.8c2.39.75 4.22 2.58 4.97 4.97h-1v.97z"/></svg>
+                    Pescados y Mariscos
+                </button>
+                <button class="tab-btn" data-category="carnes">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    Carnes
+                </button>
+                <button class="tab-btn" data-category="postres">
+                    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 2c1.1 0 2 .9 2 2v1.1c1.9.4 3.4 1.8 3.9 3.7l1.1.2c.6 0 1 .4 1 1v4c0 .6-.4 1-1 1h-1.1c-.5 1.9-2 3.3-3.9 3.7V20c0 1.1-.9 2-2 2s-2-.9-2-2v-1.3c-1.9-.4-3.4-1.8-3.9-3.7H5c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1l1.1-.2C6.6 8.9 8.1 7.5 10 7.1V4c0-1.1.9-2 2-2z"/></svg>
+                    Postres
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Items dynamically generated by main.js or hardcoded for SEO indexing -->
+                <!-- We will populate these dynamically in JS for smoother loading and tab transitions, but we leave the container ready -->
+            </div>
+            
+            <div class="menu-notice reveal">
+                <p class="service-notice" style="color: var(--accent); font-family: var(--font-accent); font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px;">* Pan / servicio: 1,00 € por persona (pax.)</p>
+            </div>
+            
+            <div class="menu-disclaimer reveal">
+                <p>* Si tienes alguna alergia o intolerancia alimentaria, por favor comunícaselo a nuestro personal al realizar tu pedido. Disponemos de opciones adaptadas para intolerancias.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Reviews Widget Section -->
+    <section class="reviews-section section-padding" id="opiniones">
+        <div class="container reveal">
+            <div class="text-center">
+                <span class="section-tagline">Reseñas de Clientes</span>
+                <h2>Lo que opinan de nosotros en Google</h2>
+                <p class="section-subtitle">Nuestra prioridad es tu experiencia. Nos enorgullece contar con una valoración excepcional gracias al cariño de quienes nos visitan.</p>
+            </div>
+
+            <div class="google-widget-container">
+                <!-- Widget Header Summary -->
+                <div class="widget-header">
+                    <div class="widget-rating-summary">
+                        <div class="rating-huge">4.7</div>
+                        <div class="rating-stars-box">
+                            <div class="stars-gold-big">
+                                <svg viewBox="0 0 24 24" class="icon"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg viewBox="0 0 24 24" class="icon"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg viewBox="0 0 24 24" class="icon"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg viewBox="0 0 24 24" class="icon"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg viewBox="0 0 24 24" class="icon" style="clip-path: inset(0 30% 0 0);"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                            <span class="reviews-count">481 opiniones en Google Maps</span>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-rating-bars" id="widget-rating-bars">
+                        <!-- Rating bars populated by reviews.js -->
+                    </div>
+
+                    <div class="widget-actions">
+                        <a href="https://maps.app.goo.gl/djLpsPLtSeErw6v27" target="_blank" rel="noopener" class="btn btn-gmaps">
+                            <svg viewBox="0 0 24 24" class="icon btn-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Reviews Scroll Grid -->
+                <div class="reviews-wrapper">
+                    <button class="carousel-control prev" id="carousel-prev" aria-label="Reseña anterior">
+                        <svg viewBox="0 0 24 24" class="icon"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </button>
+                    <div class="reviews-carousel" id="reviews-carousel">
+                        <!-- Reviews generated by reviews.js -->
+                    </div>
+                    <button class="carousel-control next" id="carousel-next" aria-label="Siguiente reseña">
+                        <svg viewBox="0 0 24 24" class="icon"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservation Info Section -->
+    <section class="contact-section section-padding" id="contacto">
+        <div class="container grid grid-2">
+            <div class="contact-info reveal reveal-left">
+                <span class="section-tagline">Ubicación y Horarios</span>
+                <h2>¿Dónde encontrarnos?</h2>
+                <p class="contact-intro">Ven a disfrutar de una buena comida en un ambiente inigualable. Estamos situados en una zona céntrica y de muy fácil acceso en Solares.</p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Calle Fernández Rañada, Solares, Cantabria, España</p>
+                            <a href="https://maps.app.goo.gl/djLpsPLtSeErw6v27" target="_blank" class="link-action">Cómo llegar con Google Maps</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Teléfono y Reservas</h4>
+                            <p class="phone-number" id="open-booking-btn-contact" style="cursor: pointer; transition: color 0.3s ease;">942 52 14 72 <span class="phone-divider">|</span> 627 088 028</p>
+                            <span class="text-small">Recomendamos reservar con antelación.</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Horario de Apertura</h4>
+                            <div class="schedule-grid">
+                                <span class="days">Viernes a Sábado</span>
+                                <span class="hours">13:00 - 16:30 | 20:00 - 23:30</span>
+                                <span class="days">Domingos</span>
+                                <span class="hours">13:00 - 16:30</span>
+                                <span class="days text-muted">Lunes a Jueves</span>
+                                <span class="hours text-muted">Cerrado por descanso</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-map reveal reveal-right">
+                <!-- Google Maps Embed simulation with beautiful overlay and theme -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div class="map-overlay">
+                            <svg viewBox="0 0 24 24" class="map-pin"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <h3>The Original Tavern</h3>
+                            <p>Calle Fernández Rañada, Solares</p>
+                            <a href="https://maps.app.goo.gl/djLpsPLtSeErw6v27" target="_blank" class="btn btn-primary">Abrir mapa interactivo</a>
+                        </div>
+                        <div class="map-background-pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center">
+            <a href="#inicio" class="footer-logo"><span class="logo-accent">The Original</span> Tavern</a>
+            <p class="footer-tagline">Cocina honesta, ambiente inigualable y raciones para compartir en Cantabria.</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/TheOriginalTavernSolares/" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/theoriginaltavern/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <a href="https://maps.app.goo.gl/djLpsPLtSeErw6v27" target="_blank" rel="noopener" aria-label="Google Maps">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Original Tavern. Todos los derechos reservados.</p>
+                <p class="developer-credit">Diseñado y desarrollado con pasión.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Simulated Reservation Modal -->
+    <div class="modal-backdrop" id="booking-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="close-booking-modal" aria-label="Cerrar ventana">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal-header">
+                <h2>Llamar para Reservar</h2>
+                <p>Elige tu opción de preferencia para asegurar tu mesa en The Original Tavern.</p>
+            </div>
+            
+            <div class="phone-modal-container">
+                <p class="modal-call-intro">
+                    Llámanos directamente para realizar tu reserva al instante o escríbenos un mensaje por WhatsApp. ¡Estaremos encantados de atenderte!
+                </p>
+                
+                <div class="phone-cards-grid">
+                    <!-- Landline Card -->
+                    <a href="tel:942521472" class="contact-action-card phone-card">
+                        <div class="card-icon-box">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-label">Teléfono Fijo</span>
+                            <span class="card-number">942 52 14 72</span>
+                            <span class="card-action">Llamar al Fijo</span>
+                        </div>
+                    </a>
+
+                    <!-- Mobile Card -->
+                    <a href="tel:627088028" class="contact-action-card mobile-card">
+                        <div class="card-icon-box">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-label">Teléfono Móvil</span>
+                            <span class="card-number">627 088 028</span>
+                            <span class="card-action">Llamar al Móvil</span>
+                        </div>
+                    </a>
+
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/34627088028?text=Hola,%20me%20gustaría%20reservar%20una%20mesa%20en%20The%20Original%20Tavern." target="_blank" rel="noopener" class="contact-action-card whatsapp-card">
+                        <div class="card-icon-box">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.24.67-1.38 1.28-1.91 1.37-.48.08-1.04.14-3.15-.73-2.7-1.12-4.43-3.86-4.56-4.04-.13-.18-1.09-1.45-1.09-2.77 0-1.32.69-1.97.94-2.23.25-.26.54-.32.72-.32.18 0 .36.01.52.02.17.01.39-.06.6.44.22.52.74 1.8.8 1.93.07.13.11.29.02.48-.09.18-.14.3-.28.46-.14.16-.3.36-.43.48-.15.14-.3.29-.13.58.17.29.76 1.25 1.63 2.03.1.09.2.18.29.27.76.68 1.4 1.11 1.77 1.27.35.15.68.1.92-.18.25-.29.98-1.14 1.24-1.53.26-.39.52-.32.88-.19.36.13 2.27 1.07 2.66 1.26.39.19.65.29.74.45.1.17.1.97-.14 1.64z"/></svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-label">WhatsApp</span>
+                            <span class="card-number">Enviar Mensaje</span>
+                            <span class="card-action">Chatear ahora</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="modal-call-footer">
+                    <p><strong>Recomendación:</strong> Aconsejamos reservar con la mayor antelación posible, especialmente para servicios de comidas y cenas en fin de semana. ¡Te esperamos en Solares!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Lightbox removed to maximize space -->
+
+    <!-- Dish Image Viewer Modal -->
+    <div class="modal-backdrop" id="dish-image-modal">
+        <div class="modal-card image-modal-container">
+            <button class="modal-close" id="close-image-modal" aria-label="Cerrar ventana">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="modal-image-wrapper">
+                <img src="" alt="Plato" id="dish-image-display" class="dish-modal-image">
+            </div>
+            <div class="modal-image-caption" id="dish-image-caption"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/reviews.js?v=1.0.3"></script>
+    <script src="scripts/animations.js?v=1.0.3"></script>
+    <script src="scripts/main.js?v=1.0.3"></script>
+</body>
+</html>

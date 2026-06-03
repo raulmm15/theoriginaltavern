@@ -1,0 +1,155 @@
+/* ANIMATIONS & MICRO-INTERACTIONS - The Original Tavern */
+
+/* Scroll Reveal Base */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.reveal-left {
+    transform: translateX(-50px);
+}
+
+.reveal.reveal-right {
+    transform: translateX(50px);
+}
+
+/* Active State triggered by Intersection Observer */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.reveal-left.active {
+    transform: translateX(0);
+}
+
+.reveal.reveal-right.active {
+    transform: translateX(0);
+}
+
+/* Hero Section Animations on Load */
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-content h1 {
+    animation: fade-in-up 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.hero-content .hero-badge {
+    animation: fade-in-up 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.05s;
+}
+
+.hero-content .hero-subtitle {
+    animation: fade-in-up 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.35s;
+}
+
+.hero-content .hero-buttons {
+    animation: fade-in-up 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-scroll-indicator {
+    animation: fade-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+/* Keyframes */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Tab filter animation */
+.menu-grid-transitioning {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+/* Card image hover zoom */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.06);
+}
+
+/* Pulses & Shimmers */
+.pulse-glow {
+    position: relative;
+}
+
+.pulse-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.4);
+    animation: pulse-ring 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    pointer-events: none;
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(var(--accent-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+    }
+}
+
+/* Modal scale transitions handled smoothly */
+@keyframes modal-pop {
+    0% {
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Micro-interaction on buttons */
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-book {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-book:hover {
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4);
+}
