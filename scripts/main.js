@@ -746,6 +746,12 @@ function initDishImageModal() {
     const closeDishModal = () => {
         dishImageModal.classList.remove('open');
         document.body.style.overflow = '';
+        // Limpiar la imagen tras la animación para que no se vea al abrir otra
+        setTimeout(() => {
+            if (!dishImageModal.classList.contains('open')) {
+                dishImageDisplay.src = '';
+            }
+        }, 300);
     };
 
     closeDishModalBtn.addEventListener('click', closeDishModal);
