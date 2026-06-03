@@ -569,6 +569,16 @@ const dishes = [
 ];
 
 // 3. Render Menu Lists dynamically (Classic style with dotted leaders: Name --------- Price)
+const categoryOrder = [
+    { id: "sugerencias", name: "Sugerencias" },
+    { id: "picoteo-compartir", name: "Picoteo para compartir" },
+    { id: "ensaladas", name: "Ensaladas" },
+    { id: "mojar-pan", name: "Para mojar pan" },
+    { id: "pescados-mariscos", name: "Pescados y Mariscos" },
+    { id: "carnes", name: "Carnes" },
+    { id: "postres", name: "Postres" }
+];
+
 function renderMenu(categoryFilter) {
     categoryFilter = typeof categoryFilter !== 'undefined' ? categoryFilter : "sugerencias";
     const grid = document.getElementById('menu-grid');
@@ -627,6 +637,45 @@ function renderMenu(categoryFilter) {
         `;
         grid.appendChild(listItem);
     });
+
+    // Add Next Category Button if applicable
+    const currentIndex = categoryOrder.findIndex(c => c.id === categoryFilter);
+    if (currentIndex !== -1 && currentIndex < categoryOrder.length - 1) {
+        const nextCategory = categoryOrder[currentIndex + 1];
+        
+        const nextBtnContainer = document.createElement('div');
+        nextBtnContainer.className = 'next-category-container';
+        nextBtnContainer.style.textAlign = 'center';
+        nextBtnContainer.style.marginTop = '2.5rem';
+        nextBtnContainer.style.marginBottom = '1rem';
+        nextBtnContainer.style.gridColumn = '1 / -1';
+        
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn btn-secondary';
+        nextBtn.innerHTML = `Ver ${nextCategory.name} &rarr;`;
+        
+        nextBtn.onclick = () => {
+            const nextTab = document.querySelector(`.tab-btn[data-category="${nextCategory.id}"]`);
+            if (nextTab) {
+                nextTab.click();
+                
+                const menuSection = document.getElementById('carta');
+                if (menuSection) {
+                    const headerOffset = 80;
+                    const elementPosition = menuSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        };
+        
+        nextBtnContainer.appendChild(nextBtn);
+        grid.appendChild(nextBtnContainer);
+    }
 }
 
 // 4. Setup Menu Tab Filters Logic
