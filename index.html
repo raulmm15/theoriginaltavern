@@ -2,33 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script>
-        window.onerror = function(msg, url, line, col, error) {
-            var errDiv = document.getElementById('debug-error-box');
-            if (!errDiv) {
-                errDiv = document.createElement('div');
-                errDiv.id = 'debug-error-box';
-                errDiv.style.position = 'fixed';
-                errDiv.style.top = '0';
-                errDiv.style.left = '0';
-                errDiv.style.width = '100%';
-                errDiv.style.background = '#ff3333';
-                errDiv.style.color = '#ffffff';
-                errDiv.style.padding = '20px';
-                errDiv.style.zIndex = '999999';
-                errDiv.style.fontSize = '14px';
-                errDiv.style.fontFamily = 'monospace';
-                errDiv.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
-                errDiv.style.wordBreak = 'break-all';
-                document.documentElement.appendChild(errDiv);
-            }
-            errDiv.innerHTML = '<strong>Error de JS detectado en móvil:</strong><br>' + 
-                               'Mensaje: ' + msg + '<br>' +
-                               'Archivo: ' + url.substring(url.lastIndexOf('/') + 1) + '<br>' +
-                               'Línea: ' + line + ', Columna: ' + col;
-            return false;
-        };
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Original Tavern | Restaurante en Solares, Cantabria — Cachopo, Pulpo y Carnes</title>
     <meta name="description" content="The Original Tavern, restaurante en Solares (Cantabria). Cocina tradicional cántabra con raciones generosas: cachopo de cecina y foie, pulpo a la brasa, carnes y mariscos. Cerca de Liérganes, Santander y Medio Cudeyo. Reservas: 942 52 14 72.">
