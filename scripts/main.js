@@ -272,8 +272,7 @@ const dishes = [
         price: "16,90 €",
         desc: "",
         allergens: [],
-        badge: "Sugerencia",
-        image: "assets/alcachofas-foie.png"
+        badge: "Sugerencia"
     },
     {
         id: 56,
@@ -311,7 +310,7 @@ const dishes = [
         desc: "",
         allergens: [],
         badge: "Sugerencia",
-        image: "assets/setas-salsa-foie.jpg"
+        image: "assets/setas-foie.png"
     },
     {
         id: 60,
@@ -346,10 +345,11 @@ const dishes = [
     {
         id: 23,
         category: "ensaladas",
-        title: "Ensalada de paletilla ibérica y mousse de foie",
+        title: "Ensalada ibérica",
         price: "15,50 €",
         desc: "lechugas, pasas, tomatito en vinagreta de foie",
-        allergens: [7]
+        allergens: [7],
+        image: "assets/ensalada-iberica.jpg"
     },
  
     // --- PARA MOJAR PAN (mojar-pan) ---

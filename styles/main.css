@@ -1,17 +1,17 @@
 /* DESIGN SYSTEM & GLOBAL STYLES - The Original Tavern */
 
 :root {
-    /* Color Palette - Elegant Burgundy Light Theme */
+    /* Color Palette - Summer Cyan Theme */
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #f1f3f5;
+    --bg-secondary: #f0fdfa;
+    --bg-tertiary: #ccfbf1;
     --bg-glass: rgba(255, 255, 255, 0.85);
     
-    --accent: #8b0022; /* Rich Burgundy / Granate */
-    --accent-rgb: 139, 0, 34;
-    --accent-hover: #a60029;
-    --accent-dark: #5e0017;
-    --accent-light: #ffccd6;
+    --accent: #00c3ff; /* Electric Blue/Cyan */
+    --accent-rgb: 0, 195, 255;
+    --accent-hover: #00a0d1;
+    --accent-dark: #00779e;
+    --accent-light: #b3efff;
     
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
@@ -165,7 +165,7 @@ button {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

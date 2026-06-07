@@ -76,7 +76,7 @@
 }
 
 .logo-img {
-    height: 48px; /* Enlarged desktop logo height */
+    height: 72px; /* Enlarged desktop logo height */
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -109,27 +109,28 @@
 }
 
 .nav-link {
-    font-family: var(--font-accent);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85); /* Semi-transparent white by default on dark background */
-    position: relative;
-    padding: 6px 0;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 12px;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .nav-link:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--accent-light); /* Soft light pink-burgundy underline on dark background */
+    background-color: var(--accent);
     transition: width 0.3s ease;
 }
 
@@ -139,8 +140,7 @@
 }
 
 .nav-link.active {
-    color: var(--accent-light); /* Highlight active link clearly in hero state */
-    font-weight: 600;
+    color: var(--accent);
 }
 
 .header-actions {
@@ -267,7 +267,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(12, 12, 12, 0.45) 0%, rgba(12, 12, 12, 0.85) 90%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.95) 90%);
     z-index: -1;
 }
 
@@ -304,7 +304,7 @@
 }
 
 .hero-section h1 {
-    color: #ffffff; /* Explicit high-contrast white text for hero headline */
+    color: var(--text-primary); /* Use dark text on light background */
     font-size: 4rem;
     line-height: 1.15;
     margin-bottom: 24px;
@@ -321,7 +321,7 @@
     font-size: 1.25rem;
     max-width: 650px;
     margin: 0 auto 40px auto;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-secondary); /* Use secondary text color on light background */
 }
 
 .hero-buttons {
@@ -331,18 +331,18 @@
 }
 
 .hero-buttons .btn-secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(var(--accent-rgb), 0.05);
+    color: var(--accent-dark);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
     backdrop-filter: blur(5px);
 }
 
 .hero-buttons .btn-secondary:hover {
     background: rgba(var(--accent-rgb), 0.15);
-    border-color: var(--accent-light);
-    color: #ffffff;
+    border-color: var(--accent);
+    color: var(--accent-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.2);
+    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.15);
 }
 
 @media (max-width: 480px) {
@@ -605,8 +605,8 @@
 
 @keyframes dot-active {
     0% { background-color: rgba(255, 255, 255, 0.4); transform: scale(1); }
-    10% { background-color: #d32f2f; transform: scale(1.3); }
-    33% { background-color: #d32f2f; transform: scale(1.3); }
+    10% { background-color: var(--accent); transform: scale(1.3); }
+    33% { background-color: var(--accent); transform: scale(1.3); }
     43% { background-color: rgba(255, 255, 255, 0.4); transform: scale(1); }
     100% { background-color: rgba(255, 255, 255, 0.4); transform: scale(1); }
 }
